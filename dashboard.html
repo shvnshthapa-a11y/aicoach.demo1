@@ -1,77 +1,909 @@
 <!DOCTYPE html>
-
 <html lang="en" data-theme="dark">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta charset="UTF-8">
+  <title>Dashboard | AI Form Coach</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Dashboard | AI Form Coach</title>
-
-    <link rel="stylesheet" href="dashboard.css">
-
+  <link rel="stylesheet" href="dashboard.css" />
 </head>
 
 <body>
 
-    <aside class="sidebar">
+  <!-- ========================================
+       MOBILE MENU BUTTON
+       ======================================== -->
 
-        <div class="sidebar-header">
+  <button
+    id="mobileMenuButton"
+    class="mobile-menu-button"
+    aria-label="Open navigation"
+  >
+    ☰
+  </button>
 
-            <a class="logo" href="dashboard.html">
-                <span>●</span>
 
-                <span class="logo-text">
-                    AI FORM COACH
-                </span>
-            </a>
+  <!-- ========================================
+       SIDEBAR
+       ======================================== -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <!-- LOGO -->
+
+    <div class="sidebar-header">
+
+      <a href="dashboard.html" class="logo">
+
+        <span class="logo-dot">
+          ●
+        </span>
+
+        <span>
+          AI FORM COACH
+        </span>
+
+      </a>
+
+    </div>
+
+
+    <!-- MAIN NAVIGATION -->
+
+    <nav class="sidebar-nav">
+
+
+      <!-- DASHBOARD -->
+
+      <a
+        href="dashboard.html"
+        class="nav-item active"
+      >
+
+        <span class="nav-icon">
+          ◉
+        </span>
+
+        <span>
+          Dashboard
+        </span>
+
+      </a>
+
+
+
+      <!-- =================================
+           TRAIN DROPDOWN
+           ================================= -->
+
+      <div class="nav-group">
+
+        <button
+          id="trainMenuButton"
+          class="nav-item nav-dropdown-button"
+          type="button"
+        >
+
+          <span class="nav-icon">
+            ▶
+          </span>
+
+          <span class="nav-label">
+            Train
+          </span>
+
+          <span
+            id="trainArrow"
+            class="dropdown-arrow"
+          >
+            ▾
+          </span>
+
+        </button>
+
+
+        <!-- TRAIN SUBMENU -->
+
+        <div
+          id="trainSubmenu"
+          class="nav-submenu"
+        >
+
+
+          <a href="home-workout.html">
+
+            <span>
+              ⌂
+            </span>
+
+            <span>
+              Home Workout
+            </span>
+
+          </a>
+
+
+          <a href="gym-workout.html">
+
+            <span>
+              ◆
+            </span>
+
+            <span>
+              Gym Workout
+            </span>
+
+          </a>
+
+
+          <a href="outdoor-workout.html">
+
+            <span>
+              ☀
+            </span>
+
+            <span>
+              No Equipment
+            </span>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- DIET TRACKER -->
+
+      <a
+        href="diet-tracker.html"
+        class="nav-item"
+      >
+
+        <span class="nav-icon">
+          ◫
+        </span>
+
+        <span>
+          Diet Tracker
+        </span>
+
+      </a>
+
+
+
+      <!-- PROGRESS -->
+
+      <a
+        href="#progress"
+        class="nav-item"
+      >
+
+        <span class="nav-icon">
+          ↗
+        </span>
+
+        <span>
+          Progress
+        </span>
+
+      </a>
+
+
+
+      <!-- HISTORY -->
+
+      <a
+        href="#activity"
+        class="nav-item"
+      >
+
+        <span class="nav-icon">
+          ◷
+        </span>
+
+        <span>
+          History
+        </span>
+
+      </a>
+
+
+    </nav>
+
+
+
+    <!-- ========================================
+         BOTTOM SIDEBAR
+         ======================================== -->
+
+    <div class="sidebar-bottom">
+
+
+      <!-- THEME -->
+
+      <button
+        id="themeToggle"
+        class="bottom-item"
+        type="button"
+      >
+
+        <span id="themeIcon">
+          ☀
+        </span>
+
+        <span id="themeText">
+          Light mode
+        </span>
+
+      </button>
+
+
+
+      <!-- SETTINGS -->
+
+      <button
+        class="bottom-item"
+        type="button"
+      >
+
+        <span>
+          ⚙
+        </span>
+
+        <span>
+          Settings
+        </span>
+
+      </button>
+
+
+
+      <!-- LOGOUT -->
+
+      <a
+        href="index.html"
+        class="bottom-item logout"
+      >
+
+        <span>
+          →
+        </span>
+
+        <span>
+          Logout
+        </span>
+
+      </a>
+
+
+    </div>
+
+  </aside>
+
+
+
+  <!-- ========================================
+       MAIN DASHBOARD
+       ======================================== -->
+
+  <main class="dashboard-content">
+
+
+    <!-- ========================================
+         HEADER
+         ======================================== -->
+
+    <header class="dashboard-header">
+
+      <div>
+
+        <p class="eyebrow">
+          DASHBOARD
+        </p>
+
+        <h1>
+          Good afternoon.
+        </h1>
+
+        <p class="header-subtitle">
+          Ready for another training session?
+        </p>
+
+      </div>
+
+
+      <!-- PROFILE -->
+
+      <div class="profile">
+
+        <div class="profile-info">
+
+          <strong>
+            Athlete
+          </strong>
+
+          <span>
+            Free plan
+          </span>
+
+        </div>
+
+        <div class="avatar">
+          A
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- ========================================
+         STATS
+         ======================================== -->
+
+    <section
+      class="stats-grid"
+      id="progress"
+    >
+
+
+      <!-- TOTAL SESSIONS -->
+
+      <article class="stat-card">
+
+        <div class="stat-top">
+
+          <span class="stat-label">
+            TOTAL SESSIONS
+          </span>
+
+          <span class="stat-icon">
+            ▶
+          </span>
+
+        </div>
+
+        <div class="stat-number">
+          0
+        </div>
+
+        <div class="stat-footer">
+          Start your first session
+        </div>
+
+      </article>
+
+
+
+      <!-- FORM SCORE -->
+
+      <article class="stat-card">
+
+        <div class="stat-top">
+
+          <span class="stat-label">
+            AVERAGE FORM SCORE
+          </span>
+
+          <span class="stat-icon">
+            ◎
+          </span>
+
+        </div>
+
+        <div class="stat-number">
+          --
+        </div>
+
+        <div class="stat-footer">
+          No analysis data yet
+        </div>
+
+      </article>
+
+
+
+      <!-- TRAINING TIME -->
+
+      <article class="stat-card">
+
+        <div class="stat-top">
+
+          <span class="stat-label">
+            TRAINING TIME
+          </span>
+
+          <span class="stat-icon">
+            ◷
+          </span>
+
+        </div>
+
+        <div class="stat-number">
+
+          0
+
+          <span>
+            m
+          </span>
+
+        </div>
+
+        <div class="stat-footer">
+          This week
+        </div>
+
+      </article>
+
+
+
+      <!-- CALORIES -->
+
+      <article class="stat-card">
+
+        <div class="stat-top">
+
+          <span class="stat-label">
+            CALORIES TODAY
+          </span>
+
+          <span class="stat-icon">
+            ◫
+          </span>
+
+        </div>
+
+        <div class="stat-number">
+
+          0
+
+          <span>
+            kcal
+          </span>
+
+        </div>
+
+        <div class="stat-footer">
+
+          <a href="diet-tracker.html">
+            Open Diet Tracker →
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </section>
+
+
+
+    <!-- ========================================
+         TRAINING
+         ======================================== -->
+
+    <section class="dashboard-section">
+
+
+      <div class="section-title">
+
+        <div>
+
+          <p class="eyebrow">
+            TRAINING
+          </p>
+
+          <h2>
+            Choose how you're training
+          </h2>
+
+          <p class="section-description">
+            Select your environment and we'll guide you
+            through the next steps.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- WORKOUT CARDS -->
+
+      <div class="workout-grid">
+
+
+        <!-- HOME WORKOUT -->
+
+        <a
+          href="home-workout.html"
+          class="workout-card"
+        >
+
+          <div class="workout-top">
+
+            <div class="workout-icon">
+              ⌂
+            </div>
+
+            <span class="workout-arrow">
+              →
+            </span>
+
+          </div>
+
+
+          <div class="workout-content">
+
+            <span class="workout-type">
+              AT HOME
+            </span>
+
+            <h3>
+              Home Workout
+            </h3>
+
+            <p>
+              Guided workouts designed for your
+              home with minimal equipment.
+            </p>
+
+          </div>
+
+
+          <div class="workout-tags">
+
+            <span>
+              Beginner friendly
+            </span>
+
+            <span>
+              Flexible
+            </span>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- GYM WORKOUT -->
+
+        <a
+          href="gym-workout.html"
+          class="workout-card featured-workout"
+        >
+
+          <div class="recommended">
+            POPULAR
+          </div>
+
+
+          <div class="workout-top">
+
+            <div class="workout-icon">
+              ◆
+            </div>
+
+            <span class="workout-arrow">
+              →
+            </span>
+
+          </div>
+
+
+          <div class="workout-content">
+
+            <span class="workout-type">
+              AT THE GYM
+            </span>
+
+            <h3>
+              Gym Workout
+            </h3>
+
+            <p>
+              Train with weights and equipment
+              while tracking your movement.
+            </p>
+
+          </div>
+
+
+          <div class="workout-tags">
+
+            <span>
+              Strength
+            </span>
+
+            <span>
+              Form analysis
+            </span>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- NO EQUIPMENT -->
+
+        <a
+          href="outdoor-workout.html"
+          class="workout-card"
+        >
+
+          <div class="workout-top">
+
+            <div class="workout-icon">
+              ☀
+            </div>
+
+            <span class="workout-arrow">
+              →
+            </span>
+
+          </div>
+
+
+          <div class="workout-content">
+
+            <span class="workout-type">
+              ANYWHERE
+            </span>
+
+            <h3>
+              No Equipment
+            </h3>
+
+            <p>
+              Bodyweight workouts you can perform
+              outdoors or wherever you have space.
+            </p>
+
+          </div>
+
+
+          <div class="workout-tags">
+
+            <span>
+              Bodyweight
+            </span>
+
+            <span>
+              No gear
+            </span>
+
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ========================================
+         DIET TRACKER PREVIEW
+         ======================================== -->
+
+    <section class="dashboard-section" id="training">
+
+
+      <div class="section-title">
+
+        <div>
+
+          <p class="eyebrow">
+            NUTRITION
+          </p>
+
+          <h2>
+            Diet Tracker
+          </h2>
+
+          <p class="section-description">
+            Keep track of your daily food and nutrition.
+          </p>
 
         </div>
 
 
-        <!--
-            EMPTY FOR NOW
+        <a
+          href="diet-tracker.html"
+          class="section-link"
+        >
+          Open tracker →
+        </a>
 
-            Later we'll add:
-
-            Dashboard
-            Training
-            Camera Analysis
-            Progress
-            Profile
-            Settings
-            Admin
-        -->
+      </div>
 
 
-        <div class="sidebar-bottom">
 
-            <button id="themeToggle">
-                ☀
-            </button>
+      <a
+        href="diet-tracker.html"
+        class="diet-card"
+      >
 
-            <a href="index.html">
-                Logout
-            </a>
+
+        <div class="calorie-circle">
+
+          <div>
+
+            <strong>
+              0
+            </strong>
+
+            <span>
+              kcal
+            </span>
+
+          </div>
 
         </div>
 
-    </aside>
+
+        <div class="diet-info">
+
+          <span class="diet-label">
+            TODAY
+          </span>
+
+          <h3>
+            Start tracking your meals
+          </h3>
+
+          <p>
+            Log your meals to see your daily
+            calories and nutrition totals.
+          </p>
+
+        </div>
 
 
-    <main class="dashboard-content">
 
-        <!-- EMPTY FOR NOW -->
-
-    </main>
+        <div class="macro-grid">
 
 
-    <script src="dashboard.js"></script>
+          <div>
+
+            <span>
+              Protein
+            </span>
+
+            <strong>
+              0g
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Carbs
+            </span>
+
+            <strong>
+              0g
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              Fat
+            </span>
+
+            <strong>
+              0g
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+        <span class="diet-arrow">
+          →
+        </span>
+
+
+      </a>
+
+    </section>
+
+
+
+    <!-- ========================================
+         RECENT ACTIVITY
+         ======================================== -->
+
+    <section
+      class="dashboard-section"
+      id="activity"
+    >
+
+
+      <div class="section-title">
+
+        <div>
+
+          <p class="eyebrow">
+            ACTIVITY
+          </p>
+
+          <h2>
+            Recent sessions
+          </h2>
+
+        </div>
+
+
+        <button
+          class="text-button"
+          type="button"
+        >
+          View all
+        </button>
+
+      </div>
+
+
+
+      <div class="empty-state">
+
+        <div class="empty-icon">
+          ◎
+        </div>
+
+        <h3>
+          No training sessions yet
+        </h3>
+
+        <p>
+          Complete your first workout and
+          your training history will appear here.
+        </p>
+
+
+        <a
+          href="#training"
+          class="empty-button"
+        >
+          Start training
+        </a>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- MOBILE OVERLAY -->
+
+  <div
+    id="sidebarOverlay"
+    class="sidebar-overlay"
+  ></div>
+
+
+  <script src="dashboard.js"></script>
 
 </body>
 
