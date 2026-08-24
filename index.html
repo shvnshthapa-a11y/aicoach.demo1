@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="AI Form Coach — real-time exercise and sports movement feedback using your phone camera." />
+  <title>AI Form Coach</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="nav">
+    <a class="logo" href="#home"><span>●</span> AI FORM COACH</a>
+    <nav id="navLinks">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#sports">Sports</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle light/dark mode">☀︎</button>
+      <a class="btn small" href="login.html">
+    Login
+</a>
+      <button id="menuToggle" class="menu" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">● REAL-TIME AI MOVEMENT ANALYSIS</div>
+        <h1>Move better.<br><span>Train smarter.</span></h1>
+        <p>Turn your phone camera into an AI movement coach. Get instant feedback on form, technique and movement
+          quality while you train.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#cta">Start Training →</a>
+          <a class="ghost-btn" href="#how">See how it works</a>
+        </div>
+        <div class="mini-stats">
+          <span><b>No wearables</b><small>Just your camera</small></span>
+          <span><b>Real-time</b><small>Instant feedback</small></span>
+          <span><b>Anywhere</b><small>Gym, field or home</small></span>
+        </div>
+      </div>
+
+      <div class="phone-wrap">
+        <div class="glow"></div>
+        <div class="phone">
+          <div class="phone-top"><span>LIVE ANALYSIS</span><i>● REC</i></div>
+          <div class="camera-view">
+            <div class="grid"></div>
+            <div class="person">
+              <span class="head"></span>
+              <span class="body"></span>
+              <span class="arm a1"></span><span class="arm a2"></span>
+              <span class="leg l1"></span><span class="leg l2"></span>
+              <b class="joint j1"></b><b class="joint j2"></b><b class="joint j3"></b><b class="joint j4"></b>
+            </div>
+            <span class="tracking">TRACKING</span>
+          </div>
+          <div class="score">
+            <div><small>FORM SCORE</small><strong id="score">92</strong></div><span>Excellent</span>
+          </div>
+          <div class="feedback"><b>✓ Back aligned</b><small>Keep your chest upright</small></div>
+          <div class="feedback warning"><b>! Knee position</b><small>Keep knees aligned with toes</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem">
+      <div>
+        <div class="eyebrow">WHY IT MATTERS</div>
+        <h2>Small mistakes.<br><span>Big setbacks.</span></h2>
+      </div>
+      <p>Incorrect form, excessive fatigue and poor recovery can increase injury risk. Most people don't notice
+        technique breaking down until it's too late.</p>
+    </section>
+
+    <section class="steps section" id="how">
+      <div class="section-head">
+        <div class="eyebrow">HOW IT WORKS</div>
+        <h2>Three steps to better movement.</h2>
+      </div>
+      <div class="cards three">
+        <article><em>01</em>
+          <h3>Set up your camera</h3>
+          <p>Place your phone where it can clearly see your movement. No special sensors needed.</p>
+        </article>
+        <article><em>02</em>
+          <h3>AI tracks your form</h3>
+          <p>Computer vision analyzes posture, positioning and movement patterns as you exercise.</p>
+        </article>
+        <article><em>03</em>
+          <h3>Improve instantly</h3>
+          <p>Get clear, actionable feedback so you can adjust your technique in real time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="section-head">
+        <div class="eyebrow">BUILT TO HELP YOU IMPROVE</div>
+        <h2>Feedback that moves with you.</h2>
+      </div>
+      <div class="cards features">
+        <article class="featured">
+          <div class="feature-icon">◎</div>
+          <h3>Real-time form correction</h3>
+          <p>Catch movement issues while they happen instead of after your workout.</p>
+        </article>
+        <article>
+          <div class="feature-icon">⌁</div>
+          <h3>Movement analysis</h3>
+          <p>Understand posture, joint positioning and range of motion.</p>
+        </article>
+        <article>
+          <div class="feature-icon">ϟ</div>
+          <h3>Fatigue awareness</h3>
+          <p>Spot technique changes that may appear as your body gets tired.</p>
+        </article>
+        <article>
+          <div class="feature-icon">↗</div>
+          <h3>Progress tracking</h3>
+          <p>Review sessions and see how your movement quality improves over time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sports section" id="sports">
+      <div class="section-head">
+        <div class="eyebrow">ONE COACH. MANY MOVEMENTS.</div>
+        <h2>Built for the way you train.</h2>
+      </div>
+      <div class="sport-list">
+        <span>Squats</span><span>Running</span><span>Lifting</span><span>Yoga</span><span>Football</span><span>Basketball</span>
+      </div>
+    </section>
+
+    <section class="cta section" id="cta">
+      <div class="eyebrow">READY WHEN YOU ARE</div>
+      <h2>Your next rep<br>can be <span>better.</span></h2>
+      <p>Join the early access list and be among the first to train with AI-powered movement feedback.</p>
+      <form id="signupForm">
+        <input id="email" type="email" placeholder="Enter your email" required />
+        <button class="btn" type="submit">Get Early Access →</button>
+      </form>
+      <small id="formMessage">No spam. Just product updates and early access.</small>
+    </section>
+
+    <section class="faq section" id="faq">
+      <div class="section-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>Questions, answered.</h2>
+      </div>
+      <details>
+        <summary>Do I need special equipment?</summary>
+        <p>No. The concept is designed around using your phone camera without additional motion sensors.</p>
+      </details>
+      <details>
+        <summary>Can it work for different sports?</summary>
+        <p>The product can be expanded to support gym exercises and sport-specific movement models.</p>
+      </details>
+      <details>
+        <summary>Does this replace a coach or medical professional?</summary>
+        <p>No. AI feedback is intended as a training aid and not as medical diagnosis or treatment.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer><a class="logo" href="#home"><span>●</span> AI FORM COACH</a>
+    <p>Move better. Train smarter.</p><small>© 2026 AI Form Coach · Privacy · Terms</small>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Login | AI Form Coach</title>
+
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+
+  <main class="login-page">
+
+    <!-- LEFT SIDE -->
+    <section class="login-brand">
+
+      <a href="index.html" class="logo">
+        <span class="logo-dot">●</span>
+        AI FORM COACH
+      </a>
+
+      <div class="brand-content">
+
+        <p class="eyebrow">
+          AI-POWERED MOVEMENT COACHING
+        </p>
+
+        <h1>
+          Train smarter.<br>
+          <span>Move better.</span>
+        </h1>
+
+        <p class="brand-description">
+          Real-time movement analysis and personalized
+          feedback designed to help you improve your form.
+        </p>
+
+      </div>
+
+      <a href="index.html" class="back-link">
+        ← Back to home
+      </a>
+
+    </section>
+
+
+    <!-- RIGHT SIDE -->
+    <section class="login-area">
+
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        aria-label="Toggle theme"
+      >
+        ☀
+      </button>
+
+
+      <div class="login-card">
+
+        <div class="mobile-logo">
+          <span>●</span>
+          AI FORM COACH
+        </div>
+
+        <p class="small-heading">
+          WELCOME BACK
+        </p>
+
+        <h2>Sign in to your account</h2>
+
+        <p class="subtitle">
+          Continue your training journey.
+        </p>
+
+
+        <form id="loginForm">
+
+          <!-- EMAIL -->
+
+          <div class="form-group">
+
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+            />
+
+          </div>
+
+
+          <!-- PASSWORD -->
+
+          <div class="form-group">
+
+            <div class="password-heading">
+
+              <label for="password">
+                Password
+              </label>
+
+              <a href="#">
+                Forgot password?
+              </a>
+
+            </div>
+
+            <div class="password-input">
+
+              <input
+                id="password"
+                type="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              />
+
+              <button
+                type="button"
+                id="showPassword"
+                class="show-password"
+              >
+                Show
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- REMEMBER -->
+
+          <label class="remember">
+
+            <input type="checkbox" />
+
+            <span>Remember me</span>
+
+          </label>
+
+
+          <!-- LOGIN -->
+
+          <button
+            type="submit"
+            class="login-button"
+          >
+            Sign In
+            <span>→</span>
+          </button>
+
+        </form>
+
+
+        <div class="divider">
+          <span>OR</span>
+        </div>
+
+
+        <button
+          type="button"
+          class="google-button"
+        >
+          Continue with Google
+        </button>
+
+
+        <p class="signup">
+          Don't have an account?
+          <a href="#">
+            Create account
+          </a>
+        </p>
+
+        <p
+          id="loginMessage"
+          class="login-message"
+        ></p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+
+    /* --------------------------
+       DARK / LIGHT MODE
+    -------------------------- */
+
+    const root =
+      document.documentElement;
+
+    const themeToggle =
+      document.getElementById("themeToggle");
+
+    const savedTheme =
+      localStorage.getItem("theme");
+
+
+    function setTheme(theme) {
+
+      root.dataset.theme = theme;
+
+      localStorage.setItem(
+        "theme",
+        theme
+      );
+
+      themeToggle.textContent =
+        theme === "dark"
+          ? "☀"
+          : "☾";
+
+    }
+
+
+    setTheme(savedTheme || "dark");
+
+
+    themeToggle.addEventListener(
+      "click",
+      function () {
+
+        const newTheme =
+          root.dataset.theme === "dark"
+            ? "light"
+            : "dark";
+
+        setTheme(newTheme);
+
+      }
+    );
+
+
+    /* --------------------------
+       SHOW PASSWORD
+    -------------------------- */
+
+    const password =
+      document.getElementById("password");
+
+    const showPassword =
+      document.getElementById("showPassword");
+
+
+    showPassword.addEventListener(
+      "click",
+      function () {
+
+        if (password.type === "password") {
+
+          password.type = "text";
+          showPassword.textContent = "Hide";
+
+        } else {
+
+          password.type = "password";
+          showPassword.textContent = "Show";
+
+        }
+
+      }
+    );
+
+
+    /* --------------------------
+       TEMPORARY LOGIN
+    -------------------------- */
+
+    const loginForm =
+      document.getElementById("loginForm");
+
+    const loginMessage =
+      document.getElementById("loginMessage");
+
+
+    loginForm.addEventListener(
+      "submit",
+      function (event) {
+
+        event.preventDefault();
+
+        loginMessage.textContent =
+          "Signing you in...";
+
+        setTimeout(function () {
+
+          window.location.href =
+            "dashboard.html";
+
+        }, 500);
+
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>
